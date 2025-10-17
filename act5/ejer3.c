@@ -1,19 +1,19 @@
 #include <stdio.h>
-#include <math.h> // biblioteca de mate
+#include <math.h>
 
 int main(){
-    float area, peri, sp; 
-    int lado1, lado2, lado3;
+	double area, peri, sp;
+	int lado1, lado2, lado3;
 
-    printf("Ingresa los lados de un triangulo: ");
-    scanf("%d %d %d", &lado1, &lado2, &lado3);
+	printf("Ingresa los 3 lados de un triangulo: ");
+	scanf("%d %d %d", &lado1, &lado2, &lado3);
 
-    peri = lado1 + lado2 + lado3;
-    sp = peri / 2;
-    area = sqrt(sp*(sp-lado1)*(sp-lado2)*(sp-lado3)); // sqrt es raiz cuadrada
+	peri = lado1 + lado2 + lado3;
+	sp = peri / 2;
+	area = sqrt(sp*(sp-lado1)*(sp-lado2)*(sp-lado3));
 
-    printf("Perímetro: %f\n", peri);
-    printf("Área: %f", area);
+	printf("Perimetro: %lf\n", peri);
+	printf("Area: %lf\n", area);
 
-    return 0;
+	return 0;
 }

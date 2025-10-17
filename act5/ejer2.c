@@ -1,12 +1,14 @@
 #include <stdio.h>
 
 int main(){
-    int area, base, altura;
-    printf("Ingresa la base y la altura (separados por un espacio): ");
-    scanf("%d %d", &base, &altura);
+	int area, base, altura;
 
-    area = (base * altura) / 2;
-    printf("Area: %d", area);
+	printf("Ingresa la altura y la base: ");
+	scanf("%d %d", &altura, &base);
 
-    return 0;
+	area = (base * altura) / 2;
+
+	printf("El area es: %d\n", area);
+
+	return 0;
 }

@@ -2,21 +2,21 @@
 #include <math.h>
 
 int main(){
-    
-    int num;
-    double rad, sen, cos_, tan_;
+	int num;
+	double rad, seno, coseno, tangen;
 
-    printf("Ingresa un numero: ");
-    scanf("%d", &num);
+	printf("Ingresa un numero: ");
+	scanf("%d", &num);
 
-    rad = num;
-    sen = sin(rad);
-    cos_ = cos(rad);
-    tan_ = tan(rad);
+	rad = num;
 
-    printf("Seno: %lf\n", sen);
-    printf("Coseno: %lf\n", cos_);
-    printf("Tangente: %lf", tan_);
+	seno = sin(rad);
+	coseno = cos(rad);
+	tangen = tan(rad);
 
-    return 0;
+	printf("Seno: %lf\n", seno);
+	printf("Coseno: %lf\n", coseno);
+	printf("Tangente: %lf\n", tangen);
+
+	return 0;
 }

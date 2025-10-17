@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main(){
-    float kt, ms; // Nudos y milisegundos
+	float kt, ms;
 
-    printf("Ingresa la velocidad en nudos: ");
-    scanf("%f", &kt);
+	printf("Ingresa la velocidad en nudos: ");
+	scanf("%f", &kt);
 
-    // 1 kt = 0.514444
-    ms = kt * 0.514444;
-    printf("Conversion a milisegundos: %f", ms);
+	ms = kt * 0.514444;
 
-    return 0;
+	printf("Convesion a ms: %f", ms);
+	
+	return 0;	
 }

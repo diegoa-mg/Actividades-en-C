@@ -1,25 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 
-int main (){
-    char nombre[50];
-    int horas, tarifa, salario;
+int main(){
+	char nombre[100];
+	int horas, tarifa, salario;
 
-    printf("Ingresa tu nombre: ");
-    fgets(nombre, sizeof(nombre), stdin);
+	printf("Ingresa tu nombre: ");
+	fgets(nombre, sizeof(nombre), stdin);
 
-    // Eliminar salto de linea
-    nombre[strcspn(nombre, "\n")] = '\0';
+	nombre[strcspn(nombre, "\n")] = '\0';
 
-    printf("¿Cuantas horas trabajaste esta semana? ");
-    scanf("%d", &horas);
-    printf("¿Cuanto te pagan por hora? ");
-    scanf("%d", &tarifa);
+	printf("Cuantas horas trabajaste esta semana?\n");
+	scanf("%d", &horas);
+	printf("Cual es tu tarifa por hora?\n");
+	scanf("%d", &tarifa);
 
-    salario = horas * tarifa;
+	salario = horas * tarifa;
 
-    printf("Trabajador: %s\n", nombre);
-    printf("Salario semanal: %d", salario);
+	printf("Trabajador: %s\n", nombre);
+	printf("Salario semanal: %d\n", salario);
 
-    return 0;
+	return 0;
 }
