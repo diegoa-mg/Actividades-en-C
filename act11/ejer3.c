@@ -13,28 +13,28 @@ int main(){
             desc = costo * PD0;
             total = costo - desc;
             printf("\nUnidades |  PU  |  Costo  |  %%D  |  Descuento |  Total a Pagar \n");
-            printf("%d       | %.2f |  %.2f   |  %.2f |  %.2f      |  %.2f \n", unidades, pu, costo, PD0, desc, total);
+            printf("%d       | %.2f |  %.2f   |  0%% |  %.2f      |  %.2f \n", unidades, pu, costo, desc, total);
         }
         else if(unidades <= 200){
             costo = unidades * pu;
             desc = costo * PD1;
             total = costo - desc;
             printf("\nUnidades |  PU  |  Costo  |  %%D  |  Descuento |  Total a Pagar \n");
-            printf("%d       | %.2f |  %.2f   |  %.2f |  %.2f      |  %.2f \n", unidades, pu, costo, PD1, desc, total);
+            printf("%d       | %.2f |  %.2f   |  5%% |  %.2f      |  %.2f \n", unidades, pu, costo, desc, total);
         }
         else if(unidades <= 500){
             costo = unidades * pu;
             desc = costo * PD2;
             total = costo - desc;
             printf("\nUnidades |  PU  |  Costo  |  %%D  |  Descuento |  Total a Pagar \n");
-            printf("%d       | %.2f |  %.2f   |  %.2f |  %.2f      |  %.2f \n", unidades, pu, costo, PD2, desc, total);
+            printf("%d       | %.2f |  %.2f   |  10%% |  %.2f      |  %.2f \n", unidades, pu, costo, desc, total);
         }
         else{
             costo = unidades * pu;
             desc = costo * PD3;
             total = costo - desc;
             printf("\nUnidades |  PU  |  Costo  |  %%D  |  Descuento |  Total a Pagar \n");
-            printf("%d       | %.2f |  %.2f   |  %.2f |  %.2f      |  %.2f \n", unidades, pu, costo, PD3, desc, total);
+            printf("%d       | %.2f |  %.2f   |  18%% |  %.2f      |  %.2f \n", unidades, pu, costo, desc, total);
         }
 
         unidades++;
