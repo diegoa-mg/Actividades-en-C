@@ -1,19 +1,26 @@
 #include <stdio.h>
 
 int main(){ 
-    int sum, num = 0, primero = 0 , segundo = 1;
+    int x = 0, y = 0, z = 1;
     
-    do{
-        if(num == 0){
-            printf("%d\n", primero);
-            num++;
+    while (x <= 100)
+    {
+        if(x == 0){
+            printf("%d, ", y);
+            printf("%d, ", z);
         }
-        else if(num == 1){
-            printf("%d\n", segundo);
-            num++;
-        } 
-        
-    }while(num <= 100);
+        else{
+            if(z == 89){
+                printf("%d\n", z);
+            }
+            else{
+                printf("%d, ", z);
+            }
+        }
+        x = y + z;
+        y = z;
+        z = x;
+    }
 
     return 0;
 }
