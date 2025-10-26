@@ -99,24 +99,27 @@ int main(){
                 y = total / prod2; // Maximo de prod2
                 z = total / prod3; // Maximo de prod3
 
-                
-
-
+                for(int i = 0; i <= x; i++){
+                    for(int j = 0; j <= y; j++){
+                        for(int k = 0; k <= z; k++){
+                            if((i * prod1) + (j * prod2) + (k * prod3) == total){
+                                printf("Combinacion encontrada: %d productos de $5, %d productos de $7, %d productos de $19\n", i, j, k);
+                            }
+                        }
+                    }
+                }
 
                 break;
             }
             case 5:
                 printf("\nEjercicio 5: Detectar todos los divisores de un numero\n");
-                int num, ultimonumero = 0, esDivisor = 1;
+                int num, ultimonumero = 0;
 
                 printf("Ingrese un numero entero positivo: ");
                 scanf("%d", &num);
 
-                for(int i = 1; i <= num / 2; i++){
-                    if(num % i != 0){
-                        esDivisor = 0; // No es divisor
-                    }
-                    else{
+                for(int i = 1; i <= num; i++){
+                    if(num % i == 0){
                         if(ultimonumero != 0){
                             printf("%d, ", ultimonumero);
                         }
