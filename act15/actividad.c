@@ -10,13 +10,67 @@ int main(){
         printf("3. Ejercicio 3\n");
         printf("4. Ejercicio 4\n");
         printf("5. Ejercicio 5\n");
-        printf("6. Salir\n");
+        printf("6. Ejercicio 6\n");
+        printf("7. Ejercicio 7\n");
+        printf("8. Ejercicio 8\n");    
+        printf("9. Ejercicio 9\n");
+        printf("10. Ejercicio 10\n");
+        printf("11. Salir\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opc);
         printf("\n");
 
         switch(opc){
-            case 1: {
+            case 1:{
+                int num;
+
+                for(num = 1; num <= 500; num++){
+                    if(num / 2 == 0){
+                        if(num == 2){
+                            printf("%d, ", num);
+                        }
+                    }
+                    else{
+                        printf("%d, ", num);
+                    }                         
+                }
+        
+                break;
+            }
+
+            case 2:{
+                int lado, perimetro;
+                do
+                {
+                    perimetro = 0;
+                    for(int i = 1; i <= 3; i++){
+                        printf("Ingrese el lado %d del triangulo (0 para salir): ", i);
+                        scanf("%d", &lado);
+                        if(lado == 0){
+                            break;
+                        }
+                        else{
+                            perimetro = perimetro + lado;
+                        }
+                    }    
+                    printf("El perimetro del triangulo es: %d\n", perimetro);
+                } while(lado != 0);
+                
+                break;
+            }
+            case 3:
+                // Ejercicio 3 code here
+                break;
+
+            case 4:
+                // Ejercicio 4 code here
+                break;
+
+            case 5:
+                // Ejercicio 5 code here
+                break;
+
+            case 6: {
                 int num1, num2, sim1, sim2, MCD = 1, menor;
 
                 printf("Ingresa una fraccion (Ej: 15/18):\n");
@@ -68,7 +122,7 @@ int main(){
                 break;
             }
 
-            case 2: {
+            case 7: {
                 float distancia, velocidad, tiempo;
                 char elegir;
 
@@ -89,7 +143,7 @@ int main(){
                 break;
             }
 
-            case 3: {
+            case 8: {
                 float cm, inches;
 
                 printf("Ingrese la medida en pulgadas: ");
@@ -106,7 +160,7 @@ int main(){
 
                     break;
             }
-            case 4: {
+            case 9: {
                 char nombre[50];
                 float salario;
 
@@ -127,7 +181,7 @@ int main(){
                 break;
             }
 
-            case 5: {
+            case 10: {
                 float calif, promedio;
                 char nombre[50];
 
@@ -149,14 +203,15 @@ int main(){
 
                 break;
             }
-            case 6:
+            case 11:
                 printf("Saliendo del programa...\n");
                 break;
 
             default:
-                printf("Opcion no valida. Intente de nuevo.\n");
+                printf("Opcion no valida. Por favor, intente de nuevo.\n");
+                break;
         }
-    }while(opc != 6);
-
+    }while(opc != 11);
+    
     return 0;
 }
