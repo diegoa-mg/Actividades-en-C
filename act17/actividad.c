@@ -6,6 +6,7 @@ void numeros_letra(int numero);
 float promedio3(float num1, float num2, float num3);
 void leer3valores(float *num1, float *num2, float *num3);
 void imprimir_primos(int N);
+int invertir(int num);
 int potencia(int x, int y);
 
 int main(){
@@ -50,8 +51,14 @@ int main(){
                 break;
             }
             case 4:{
-                printf("Ejercicio 4: \n");
-                // Codigo del ejercicio 4
+                printf("Ejercicio 4: Invertir un numero\n");
+                int num;
+                printf("Ingresa un numero entero positivo de dos digitos o mas: ");
+                scanf("%d", &num);
+
+                int res = invertir(num);
+                printf("El numero invertido es: %d\n", res);
+
                 break;
             }
             case 5:{
@@ -167,6 +174,17 @@ void imprimir_primos(int N){
         }
     }
     printf("%d\n", ult_primo);
+}
+
+int invertir(int num){
+    int invertido = 0;
+    while(num > 0){
+        int ultdigito = num % 10;
+        num = num / 10;
+        invertido = (invertido * 10) + ultdigito;
+    }
+
+    return invertido;
 }
 
 int potencia(int x, int y){
