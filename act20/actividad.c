@@ -228,7 +228,7 @@ int main(){
                 }
 
                 int cifras = detercifras(num);
-                printf("Cifras: %d", cifras);
+                printf("Cifras: %d\n", cifras);
 
                 break;
             }
