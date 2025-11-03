@@ -176,23 +176,14 @@ int main(){
             }
             case 3:{
                 printf("Ejercicio 23: Encriptar/Desencriptar Mensaje\n");
-                char mensaje[200]; // Un buffer para el mensaje
+                char mensaje[200];
 
                 printf("Ingresa un mensaje para encriptar: ");
-                    
-                // 1. Consumir el '\n' que sobró del scanf del menú
                 getchar(); 
-                    
-                // 2. Leer la línea completa de forma segura
                 fgets(mensaje, 200, stdin);
-                    
-                // 3. Limpiar el '\n' que fgets guarda al final
                 mensaje[strcspn(mensaje, "\n")] = 0;
 
-                // 4. Llamar al trabajador para encriptar
                 encriptar(mensaje);
-                    
-                // 5. Llamar al trabajador para desencriptar
                 desencriptar(mensaje);
                     
                 break;
