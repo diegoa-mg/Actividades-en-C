@@ -73,12 +73,60 @@ void convertirARomano(int num){
     }
 }
 
+// --- Función para Encriptar ---
+// (Suma 2 al valor ASCII de cada carácter)
+void encriptar(char *mensaje) {
+    
+    int longitud = strlen(mensaje);
+    
+    for (int i = 0; i < longitud; i++) {
+        // Modifica el carácter original
+        mensaje[i] = mensaje[i] + 2;
+    }
+    
+    printf("Mensaje encriptado: %s\n", mensaje);
+}
+
+
+// --- Función para Desencriptar ---
+// (Resta 2 al valor ASCII de cada carácter)
+void desencriptar(char *mensaje) {
+    
+    int longitud = strlen(mensaje);
+    
+    for (int i = 0; i < longitud; i++) {
+        // Modifica el carácter original para revertirlo
+        mensaje[i] = mensaje[i] - 2;
+    }
+    
+    printf("Mensaje desencriptado: %s\n", mensaje);
+}
+
 float area(float radio){
     return 3.1416 * (radio * radio);
 }
 
-int detercifras(num){
+int detercifras(int num) {
+    int contador = 0;
+
+    // Como tu 'main' ya se aseguró de que 'num' es positivo,
+    // podemos usar un 'while' simple.
     
+    // Mientras al número le queden dígitos (sea > 0)...
+    while (num > 0) {
+        
+        // 1. "Borra" el último dígito
+        //    Ej: 253 se vuelve 25
+        //    Ej: 25 se vuelve 2
+        //    Ej: 2 se vuelve 0
+        num = num / 10;
+        
+        // 2. Incrementa el contador por cada dígito "borrado"
+        contador++;
+    }
+    
+    // Devuelve el total de dígitos contados
+    return contador;
 }
 
 int main(){
@@ -134,10 +182,30 @@ int main(){
 
                 break;
             }
-            case 3:
-                /* code */
-                break;
+            case 3:{ // O el 'case' que le toque al 23
+                printf("Ejercicio 23: Encriptar/Desencriptar Mensaje\n");
+                char mensaje[200]; // Un buffer para el mensaje
 
+                printf("Ingresa un mensaje para encriptar: ");
+                    
+                // 1. Consumir el '\n' que sobró del scanf del menú
+                getchar(); 
+                    
+                // 2. Leer la línea completa de forma segura
+                fgets(mensaje, 200, stdin);
+                    
+                // 3. Limpiar el '\n' que fgets guarda al final
+                // (¡Recuerda incluir <string.h> al inicio de tu .c!)
+                mensaje[strcspn(mensaje, "\n")] = 0;
+
+                // 4. Llamar al trabajador para encriptar
+                encriptar(mensaje);
+                    
+                // 5. Llamar al trabajador para desencriptar
+                desencriptar(mensaje);
+                    
+                break;
+            }
             case 4:{
                 printf("Ejercicio 4: Calcular area de un circulo\n");
                 float radio;
@@ -148,7 +216,7 @@ int main(){
                 printf("El area del circulo es: %.2f", res);
                 break;
             }
-            case 5:
+            case 5:{
                 printf("Ejercicio 5: Determinar numero de cifras de un numero\n");
                 int num;
                 printf("Ingresa un numero positivo:\n");
@@ -163,7 +231,7 @@ int main(){
                 printf("Cifras: %d", cifras);
 
                 break;
-
+            }
             case 6:
                 printf("Saliendo del programa...\n");
                 break;
