@@ -73,8 +73,6 @@ void convertirARomano(int num){
     }
 }
 
-// --- Función para Encriptar ---
-// (Suma 2 al valor ASCII de cada carácter)
 void encriptar(char *mensaje) {
     
     int longitud = strlen(mensaje);
@@ -87,9 +85,6 @@ void encriptar(char *mensaje) {
     printf("Mensaje encriptado: %s\n", mensaje);
 }
 
-
-// --- Función para Desencriptar ---
-// (Resta 2 al valor ASCII de cada carácter)
 void desencriptar(char *mensaje) {
     
     int longitud = strlen(mensaje);
@@ -109,9 +104,6 @@ float area(float radio){
 int detercifras(int num) {
     int contador = 0;
 
-    // Como tu 'main' ya se aseguró de que 'num' es positivo,
-    // podemos usar un 'while' simple.
-    
     // Mientras al número le queden dígitos (sea > 0)...
     while (num > 0) {
         
@@ -165,7 +157,7 @@ int main(){
 
                 break;
             }
-            case 2: { // El 'case' de tu ejercicio 22
+            case 2: {
                 printf("Ejercicio 2: Convertir a Romano (0-999)\n");
                 int num;
                 printf("Ingresa un numero entre 0 y 999: ");
@@ -182,7 +174,7 @@ int main(){
 
                 break;
             }
-            case 3:{ // O el 'case' que le toque al 23
+            case 3:{
                 printf("Ejercicio 23: Encriptar/Desencriptar Mensaje\n");
                 char mensaje[200]; // Un buffer para el mensaje
 
@@ -195,7 +187,6 @@ int main(){
                 fgets(mensaje, 200, stdin);
                     
                 // 3. Limpiar el '\n' que fgets guarda al final
-                // (¡Recuerda incluir <string.h> al inicio de tu .c!)
                 mensaje[strcspn(mensaje, "\n")] = 0;
 
                 // 4. Llamar al trabajador para encriptar
