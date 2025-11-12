@@ -39,46 +39,46 @@ int main(){
 
 		switch(opc){
 			case 1:{
-			       float radio;
-			       printf("Ingresa el radio del circulo: ");
-			       scanf("%f", &radio);
+			    float radio;
+			    printf("Ingresa el radio del circulo: ");
+			    scanf("%f", &radio);
 
-			       while(radio <= 0){
-			       		printf("Valor invalido. Ingresa de nuevo: ");
-			       		scanf("%f", &radio);
-			       }
-			       	
-			       float res = areaCirculo(radio);
-			       printf("El area del circulo es: %.2f\n", res);
+			    while(radio <= 0){
+				printf("Valor invalido. Ingresa de nuevo: ");
+		  		scanf("%f", &radio);
+			    }
+			    
+			    float res = areaCirculo(radio);
+			    printf("El area del circulo es: %.2f\n", res);
 
-			       break;      
+			    break;      
 			}
 			
 			case 2:{
-			       float res = promedio();
-			       printf("El promedio es: %.2f\n", res);
+			    float res = promedio();
+			    printf("El promedio es: %.2f\n", res);
 		               
-			       break;
+			    break;
 			}
 			case 3:{
-			       int matriz[5][3];
+			    int matriz[5][3];
 
-			       printf("Ingresando los valores de la matriz (5x3):\n");
-			       for(int i = 0; i <= 4; i++){
+			    printf("Ingresando los valores de la matriz (5x3):\n");
+			    for(int i = 0; i <= 4; i++){
 					for(int j = 0; j <= 2; j++){
 						printf("Elemento [%d][%d]: ", i + 1, j + 1);
 						scanf("%d", &matriz[i][j]);
 					}
-			       }
+			    }
 
-			       printf("La matriz ingresada es:\n");
-			       for(int i = 0; i <= 4; i++){
+			    printf("La matriz ingresada es:\n");
+			    for(int i = 0; i <= 4; i++){
 					for(int j = 0; j <= 2; j++){
 						printf("%d ", matriz[i][j]);
 					}
 					printf("\n");
-			       }
-			       break;
+			    }
+			    break;
 			}
 			case 4:
 			       printf("Saliendo del programa...\n");
