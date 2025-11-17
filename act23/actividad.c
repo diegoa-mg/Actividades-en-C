@@ -115,7 +115,7 @@ int main(){
 
                 // Combinacion de los 2 ejercicios anteriores
                 // Sumar las columnas
-                for(int i = 0; i < 4; i++){ // Columnas
+                for(int i = 0; i < 2; i++){ // Columnas
                     for(int j = 0; j < 4; j++){ // Filas
                         matriz[4][i] += matriz[j][i];
                     }
