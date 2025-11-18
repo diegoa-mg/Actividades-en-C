@@ -2,13 +2,29 @@
 #include <string.h>
 
 int esPalindromo(char palabra[]) {
-    int i = 0; // 'i' empieza al inicio
-    int j = strlen(palabra) - 1; // 'j' empieza al final
+    char limpia[100];
+    int contador = 0; // Palindromo sin espacios
     
+    // Sacar el tamano de mi string
+    int tam = strlen(palabra);
+
+    // Eliminar espacios
+    for(int i = 0; i < tam; i++){
+        if(palabra[i] != ' '){ // Si el caracter no es un espacio lo copia al nuevo array
+            limpia[contador] = palabra[i];
+            contador++;
+        }
+    }
+
+    // Cerrar string
+    limpia[contador] = '\0';
+    int i = 0; // 'i' empieza al inicio
+    int j = strlen(limpia) - 1; // 'j' empieza al final
+
     while (i < j) {
-        if (palabra[i] != palabra[j]) {
+        if (limpia[i] != limpia[j]) {
             // Si un caracter es diferente, significa que no es palindromo
-            return 0;
+            return 0; // Rompe el bucle
         }
 
         i++; // Mueve 'i' hacia la derecha
@@ -18,6 +34,53 @@ int esPalindromo(char palabra[]) {
     // Si el bucle termina correctamente, significa que si es palindromo
     return 1;
 }
+
+void contar_vocales(char frase[], int tam){
+    int a = 0, e = 0, i = 0, o = 0, u = 0;
+
+    for(int i = 0; i < tam; i++){
+        if(frase[i] == 'a' || frase[i] == 'A'){
+            a++;
+        }
+        else if(frase[i] == 'e' || frase[i] == 'E'){
+            e++;
+        }
+        else if(frase[i] == 'i' || frase[i] == 'I'){
+            i++;
+        }
+        else if(frase[i] == 'o' || frase[i] == 'O'){
+            o++;
+        }
+        else if(frase[i] == 'u' || frase[i] == 'U'){
+            u++;
+        }
+    }
+
+    printf("Total 'A': %d\n", a);
+    printf("Total 'E': %d\n", e);
+    printf("Total 'I': %d\n", i);
+    printf("Total 'O': %d\n", o);
+    printf("Total 'U': %d\n", u);
+}
+
+void buscarletra(char letra, char texto[]){
+    int tam = strlen(texto);
+    int contador;
+
+    for(int i = 0; i < tam; i++){
+        if(texto[i] == letra){
+            contador++;
+        }
+    }
+
+    if(contador == 1){
+        printf("Caracter %c encontrado %d vez.\n", letra, contador);
+    }
+    else{
+        printf("Caracter %c encontrado %d veces.\n", letra, contador);
+    }
+}
+
 
 int main(){
     int opc;
@@ -104,17 +167,16 @@ int main(){
             }
             case 3:{
                 printf("Ejercicio 3: Saber si es palindromo o no\n");
-                char palabra[100]; // Un array para guardar el texto
+                char palindromo[100];
                 
                 printf("Ingresa una palabra o frase: ");
                 
-                // 1. Usamos " %[^\n]"
-                //    - El ' ' (espacio) consume el [Enter] del menú
-                //    - El '[^\n]' lee todo hasta el siguiente [Enter]
-                scanf(" %[^\n]", palabra);
+                // Scanset
+                // - El ' ' (espacio) consume el [Enter] del menú
+                // - El '[^\n]' lee todo hasta el siguiente [Enter]
+                scanf(" %[^\n]", palindromo);
 
-                // 2. Llamamos al "Trabajador" y guardamos su veredicto
-                int veredicto = esPalindromo(palabra);
+                int veredicto = esPalindromo(palindromo);
                 
                 // Mostrar el resultado
                 if (veredicto == 1){
@@ -126,12 +188,33 @@ int main(){
                 break;
             }
             case 4:{
-                printf("Ejercicio 4: \n");
-                
+                printf("Ejercicio 4: Contar el numero de vocales que tiene la frase\n");
+                char frase[50];
+
+                printf("Ingresa una frase:\n");
+                getchar(); // Limpiar buffer
+                scanf(" %[^\n]", frase);
+
+                // Tamano de la frase
+                int tam = strlen(frase);
+
+                contar_vocales(frase, tam);
+
                 break;
             }
             case 5:{
-                printf("Ejercicio 5: \n");
+                printf("Ejercicio 5: Pedir una frase y un caracter y buscar cuantas veces aparece el caracter\n");
+                char letra, texto[50];
+
+                printf("Ingresa un texto:\n");
+                getchar();
+                scanf(" %[^\n]", texto);
+
+                printf("Ingresa una letra:\n");
+                getchar();  
+                scanf("%c", &letra);
+
+                buscarletra(letra, texto);
                 
                 break;
             }
