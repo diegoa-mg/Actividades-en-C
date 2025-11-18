@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 
+int esPalindromo(char palabra[]) {
+    int i = 0; // 'i' empieza al inicio
+    int j = strlen(palabra) - 1; // 'j' empieza al final
+    
+    while (i < j) {
+        if (palabra[i] != palabra[j]) {
+            // Si un caracter es diferente, significa que no es palindromo
+            return 0;
+        }
+
+        i++; // Mueve 'i' hacia la derecha
+        j--; // Mueve 'j' hacia la izquierda
+    }
+
+    // Si el bucle termina correctamente, significa que si es palindromo
+    return 1;
+}
+
 int main(){
     int opc;
     do{
@@ -86,21 +104,22 @@ int main(){
             }
             case 3:{
                 printf("Ejercicio 3: Saber si es palindromo o no\n");
-                char palabra[50], alrevez[50];
-                int i, contador = 0;
+                char palabra[100]; // Un array para guardar el texto
+                
+                printf("Ingresa una palabra o frase: ");
+                
+                // 1. Usamos " %[^\n]"
+                //    - El ' ' (espacio) consume el [Enter] del menú
+                //    - El '[^\n]' lee todo hasta el siguiente [Enter]
+                scanf(" %[^\n]", palabra);
 
-                printf("Ingresa un palindromo: ");
-                scanf("%[^\n]", palabra);
-
-                for(i = 50; i >= 0; i--){
-                    alrevez[i] = palabra[contador];
-                    contador++;
-                }
-
-                if(strcmp(palabra, alrevez) == 0){
+                // 2. Llamamos al "Trabajador" y guardamos su veredicto
+                int veredicto = esPalindromo(palabra);
+                
+                // Mostrar el resultado
+                if (veredicto == 1){
                     printf("Es Palindromo\n");
-                }
-                else{
+                }else{
                     printf("No es Palindromo\n");
                 }
 
