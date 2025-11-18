@@ -65,7 +65,7 @@ void contar_vocales(char frase[], int tam){
 
 void buscarletra(char letra, char texto[]){
     int tam = strlen(texto);
-    int contador;
+    int contador = 0;
 
     for(int i = 0; i < tam; i++){
         if(texto[i] == letra){
@@ -211,8 +211,9 @@ int main(){
                 scanf(" %[^\n]", texto);
 
                 printf("Ingresa una letra:\n");
-                getchar();  
-                scanf("%c", &letra);
+                // getchar(); Esta bien usada esta linea pero para optimizar mejor:
+                // Limpiar buffer con ese espacio 
+                scanf(" %c", &letra);
 
                 buscarletra(letra, texto);
                 
